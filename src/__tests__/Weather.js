@@ -19,7 +19,7 @@ it('renders text input', () => {
   expect(inputElement).toBeInTheDocument();
 });
 
-test('city is blank - error populates', async () => {
+test('if city is blank - error populates', async () => {
   const { container, getByText } = render(<Weather />);
   const cityInput = container.querySelector("#user-city");
   const inputTxt = '';
@@ -34,7 +34,7 @@ test('city is blank - error populates', async () => {
   })
 });
 
-test('city is set correctly - weather populates', async () => {
+test('if city is set correctly - weather populates', async () => {
     const { container, getByText } = render(<Weather />);
     const cityInput = container.querySelector("#user-city");
     const inputTxt = 'snow';

@@ -33,7 +33,7 @@ function WeatherUI(props) {
         </Grid>
         <Grid item xs container>
           <Typography variant="h6" className="weather-type-text">
-            {weatherType === 'clear' && 'Sunny'}
+            {weatherType === 'clear' && 'Clear'}
             {weatherType === 'clouds' && 'Overcast'}
             {weatherType === 'partly' && 'Partly Cloudy'}
             {weatherType === 'rain' && 'Raining'}

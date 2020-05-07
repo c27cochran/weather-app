@@ -125,7 +125,6 @@ class Weather extends Component {
     }
 
     await fetch(apiUrl + queryString).then((response) => {
-      console.log('response.status', response.status)
       if (response.ok) {
         return response.json();
       } else {
