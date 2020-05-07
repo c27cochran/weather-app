@@ -73,6 +73,7 @@ class Weather extends Component {
     // would normally put 'err' into a logger
     console.log('err', err);
     this.setState({
+      loading: false,
       error: true,
       errorMessage: 'Location could not be found.\nPlease enter your city and state.',
     });
@@ -247,6 +248,7 @@ class Weather extends Component {
                 {/* Search button - magnifying glass */}
                 <div className="button-container">
                   <IconButton
+                    id="search-weather"
                     aria-label="submit my location"
                     className="search-btn icon-btn"
                     onClick={() => this.getWeather('city')}
@@ -264,6 +266,7 @@ class Weather extends Component {
                 </div>
                 {/* Geolocation button */}
                 <IconButton
+                  id="geolocation-btn"
                   aria-label="set my location"
                   className="location-btn icon-btn"
                   onClick={this.getLocation}

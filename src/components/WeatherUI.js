@@ -45,7 +45,7 @@ function WeatherUI(props) {
       {/* Temperature, locale and date pane */}
       <Grid container spacing={2}>
         <Grid item>
-          <Typography variant="h1" className="temp-text">
+          <Typography variant="h1" className="temp-text" data-testid="weather-check">
             {parseInt(weather.main.temp)}&#176;
           </Typography>
         </Grid>
