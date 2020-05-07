@@ -175,8 +175,12 @@ class Weather extends Component {
           break;
         }
       }
-      // for the "snow" example
-      this.setState({ weatherReport: userCity === 'snow'? snowData : data, loading: false });
+      this.setState({
+        // for the "snow" example
+        weatherReport: userCity === 'snow'? snowData : data,
+        loading: false,
+        error: false,
+      });
     }).catch((err) => {
       // would normally put 'err' into a logger
       console.log('err', err);

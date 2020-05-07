@@ -126,6 +126,7 @@ padding: 0 2rem; /* creates the space */
 .weather-container {
   position: absolute;
   left: 6rem;
+  bottom: 8rem;
   width: 80vw;
 }
 
@@ -187,6 +188,7 @@ padding: 0 2rem; /* creates the space */
   .weather-container {
     position: relative;
     left: 0;
+    bottom: 0;
   }
   .city-text {
     padding: 0;
