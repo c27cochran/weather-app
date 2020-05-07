@@ -75,7 +75,7 @@ class Weather extends Component {
     this.setState({
       loading: false,
       error: true,
-      errorMessage: 'Location could not be found.\nPlease enter your city and state.',
+      errorMessage: 'Location could not be found.\nPlease enable browser location tracking.',
     });
   }
 
@@ -97,7 +97,7 @@ class Weather extends Component {
     })
   }
 
-  getWeather = (callType, position) => {
+  getWeather = async (callType, position) => {
     this.setState({ loading: true });
     const { userCity } = this.state;
     // main API domain and params
@@ -109,6 +109,14 @@ class Weather extends Component {
       const userLon = position.coords.longitude;
       queryString = `?lat=${userLat}&lon=${userLon}&lang=${LANG}&appid=${API_KEY}&units=${UNITS}`;
     } else if (callType === 'city') {
+      if (userCity.length === 0) {
+        this.setState({
+          error: true,
+          errorMessage: 'Please enter a city.',
+          loading: false,
+        });
+        return null;
+      }
       let city = userCity;
       if (userCity.includes(',')) {
         city = `${userCity},us`
@@ -116,13 +124,15 @@ class Weather extends Component {
       queryString = `?q=${city}&lang=${LANG}&units=${UNITS}&appid=${API_KEY}`;
     }
 
-    fetch(apiUrl + queryString).then((response) => {
+    await fetch(apiUrl + queryString).then((response) => {
+      console.log('response.status', response.status)
       if (response.ok) {
         return response.json();
       } else {
         this.setState({
           error: true,
-          errorMessage: 'Weather unavailable.\nPlease try again.',
+          errorMessage: 'Weather unavailable.\nPlease make sure the city is in the United States.',
+          loading: false,
         });
       }
     }).then((data) => {
@@ -171,11 +181,6 @@ class Weather extends Component {
     }).catch((err) => {
       // would normally put 'err' into a logger
       console.log('err', err);
-      this.setState( {
-        error: true,
-        errorMessage: 'Something went wrong\nPlease try again.',
-        loading: false,
-      })
     });
   }
 

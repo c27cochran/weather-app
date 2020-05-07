@@ -23,3 +23,21 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 The build is minified and the filenames include the hashes.<br />
 Your app is ready to be deployed!
+
+## Instructions
+
+Hopefully, it's pretty self-explanatory to use:
+
+- Input a United States city (and/or state), hit enter or click the search icon.
+
+**OR**
+
+- Click the "FIND ME" button and weather should appear.*
+
+_*Note: you must enable browser location tracking. However, to see the error message, feel free
+  to disable it._ 
+
+#### Easter Egg
+
+- Type in "snow" in the text field to use hard-coded data. You will see a nice example of how
+ the UI changes based on weather.

@@ -19,6 +19,21 @@ it('renders text input', () => {
   expect(inputElement).toBeInTheDocument();
 });
 
+test('city is blank - error populates', async () => {
+  const { container, getByText } = render(<Weather />);
+  const cityInput = container.querySelector("#user-city");
+  const inputTxt = '';
+
+  fireEvent.change(cityInput, {target: {value: inputTxt}});
+
+  const searchBtn = container.querySelector("#search-weather");
+  UserEvent.click(searchBtn);
+
+  await waitFor(() => {
+    expect(getByText(/please enter a city/i)).toBeInTheDocument()
+  })
+});
+
 test('city is set correctly - weather populates', async () => {
     const { container, getByText } = render(<Weather />);
     const cityInput = container.querySelector("#user-city");
