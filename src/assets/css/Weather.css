@@ -1,0 +1,195 @@
+p {
+  margin: 0;
+}
+
+/* hide and show for desktop and mobile */
+.hide-desktop {
+  display: none !important;
+}
+
+.hide-mobile {
+  display: block !important;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.background {
+  transition: all 2s;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* put a gradient to darken the background image */
+.background:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, rgba(84, 84, 84, .4), rgba(84, 84, 84, .4));
+  z-index: 1;
+}
+
+.app-bar {
+  box-shadow: none !important;
+}
+
+.container {
+  width: 60vw;
+}
+
+.error-wrapper {
+  width: 40vw;
+  margin: 0 auto 2rem auto;
+  padding: 1rem;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+#user-city {
+padding-left: 8px;
+margin-top: 4px;
+}
+
+.input-container {
+display: inline-block;
+width: calc(60vw - 80px);
+height: 65px;
+background-image: linear-gradient(to bottom right, rgba(43, 50, 70, 0.7), rgba(33, 45, 56, 0.6));
+border-radius: 3px 0 0 3px;
+}
+
+.button-container {
+display: inline-block;
+height: 65px;
+position: absolute;
+border-radius: 0 3px 3px 0;
+}
+
+.icon-btn {
+height: 65px;
+border-radius: 0 !important;
+margin-top: 0 !important;
+}
+
+.search-btn {
+width: 80px;
+background-color: rgba(24, 146, 140, 0.7) !important;
+border-radius: 0 3px 3px 0 !important;
+}
+
+.location-btn {
+width: 100%;
+background-color: rgba(17, 39, 102, 0.7) !important;
+border-radius: 3px !important;
+}
+
+.location-label {
+padding: 8px 0 0 8px !important;
+font-weight: 700 !important;
+color: #fff !important;
+}
+
+.btn-label {
+padding-left: 1rem;
+}
+
+.separator {
+display: flex;
+align-items: center;
+padding: 1rem 4rem;
+}
+
+.separator-text {
+padding: 0 2rem; /* creates the space */
+}
+
+.separator .line {
+  flex: 1;
+  height: 3px;
+  background-color: #fff;
+}
+
+.reset-btn {
+  top: 2rem !important;
+}
+
+/* Weather UI styles */
+.weather-container {
+  position: absolute;
+  left: 6rem;
+  width: 80vw;
+}
+
+.weather-icon-bg {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(20, 202, 160, 0.48);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-type-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temp-text {
+  font-weight: 500 !important;
+}
+
+.city-text {
+  padding-top: 1.4rem;
+}
+
+.secondary-text {
+
+}
+
+.divider {
+  padding: 0 2rem;
+}
+
+/* Media queries */
+@media only screen and (max-width: 969px) {
+  .hide-desktop {
+    display: block !important;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  .container {
+    width: 90vw;
+  }
+  .error-wrapper {
+    width: 80vw;
+  }
+  .input-container {
+    width: calc(90vw - 80px);
+  }
+  .separator {
+    padding: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .weather-container {
+    position: relative;
+    left: 0;
+  }
+  .city-text {
+    padding: 0;
+    margin-top: -1rem !important;
+  }
+}

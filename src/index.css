@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+  font-family: 'Jost', 'Roboto', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: -2px -1px rgba(43, 39, 39, 0.75);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
