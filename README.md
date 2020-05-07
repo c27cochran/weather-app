@@ -2,6 +2,13 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 All prerequisites can be found 👆
 
+## **TL;DR**
+
+1. `git clone` this repo.
+2. Change dir `cd weather-app`.
+3. Run `yarn` and wait for packages to download.
+4. Run `yarn start`.  
+
 ## Available Scripts
 
 In the project directory, you can run:
